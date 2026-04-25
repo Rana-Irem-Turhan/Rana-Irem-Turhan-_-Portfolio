@@ -1,0 +1,2255 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rana Irem Turhan | Data Systems & AI Engineer</title>
+  <meta name="description"
+    content="Portfolio of Rana Irem Turhan. Data Systems & AI Engineer building reliable pipelines and intelligent architectures. Based in Istanbul, Turkey.">
+  <meta property="og:title" content="Rana Irem Turhan - Data Systems & AI Engineer">
+  <meta property="og:description" content="I build reliable pipelines. Then I make them intelligent.">
+  <meta property="og:type" content="website">
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✦</text></svg>">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300..700;1,300..700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+
+  <style>
+    /* Reset and Core Variables */
+    :root {
+      --bg: #090a0c;
+      --bg-elevated: #111318;
+      --bg-card: #16181d;
+      --text-main: #ffffff; /* Increased brightness for better contrast */
+      --text-muted: #b0b3ba; /* Slightly brighter for readability */
+      --accent-gold: #c9a96e;
+      --accent-emerald: #47b881;
+      --accent-purple: #8f85d3;
+      --border: rgba(255, 255, 255, 0.08); /* Slightly more visible */
+      --border-hover: rgba(255, 255, 255, 0.25);
+      --font-serif: 'Crimson Pro', Georgia, serif;
+      --font-sans: 'Inter', system-ui, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --transition: 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+      --sheen-soft: rgba(222, 232, 245, 0.10);
+      --sheen-mid: rgba(176, 205, 235, 0.18);
+      --sheen-edge: rgba(255, 255, 255, 0.24);
+    }
+
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: linear-gradient(135deg, #090a0c 0%, #0f1419 25%, #1a1f26 50%, #0f1419 75%, #090a0c 100%);
+      position: relative;
+      overflow-x: hidden;
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    ::selection {
+      background: rgba(71, 184, 129, 0.4);
+      color: #fff;
+    }
+
+    /* Subtle noise texture */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    body::after {
+      content: '';
+      position: fixed;
+      inset: -40%;
+      background:
+        linear-gradient(122deg,
+          transparent 30%,
+          rgba(255, 255, 255, 0.02) 42%,
+          rgba(176, 196, 222, 0.08) 50%,
+          rgba(255, 255, 255, 0.03) 58%,
+          transparent 70%);
+      filter: blur(72px);
+      mix-blend-mode: screen;
+      opacity: 0.82;
+      animation: pageSheenSweep 26s cubic-bezier(0.28, 0.08, 0.24, 1) infinite;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    @keyframes pageSheenSweep {
+      0% {
+        transform: translate3d(-34%, -26%, 0) rotate(7deg) scale(1);
+      }
+      50% {
+        transform: translate3d(30%, 22%, 0) rotate(7deg) scale(1.05);
+      }
+      100% {
+        transform: translate3d(-34%, -26%, 0) rotate(7deg) scale(1);
+      }
+    }
+    header,
+    section,
+    footer,
+    #progress-bar,
+    .mobile-nav {
+      position: relative;
+      z-index: 2;
+    }
+    .project-card,
+    .cap-card,
+    .think-card,
+    .now-card,
+    .contact-grid {
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    .project-card > *,
+    .cap-card > *,
+    .think-card > *,
+    .now-card > *,
+    .contact-grid > * {
+      position: relative;
+      z-index: 2;
+    }
+
+    .project-card::before,
+    .cap-card::before,
+    .think-card::before,
+    .now-card::before,
+    .contact-grid::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(130% 95% at 15% -18%, rgba(255, 255, 255, 0.08), transparent 55%),
+        linear-gradient(160deg, rgba(255, 255, 255, 0.035), transparent 45%);
+      opacity: 0.52;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .project-card::after,
+    .cap-card::after,
+    .think-card::after,
+    .now-card::after,
+    .contact-grid::after {
+      content: '';
+      position: absolute;
+      top: -120%;
+      left: -140%;
+      width: 140%;
+      height: 340%;
+      background: linear-gradient(
+        115deg,
+        transparent 0%,
+        transparent 38%,
+        var(--sheen-soft) 46%,
+        var(--sheen-mid) 50%,
+        var(--sheen-edge) 53%,
+        var(--sheen-mid) 56%,
+        transparent 66%,
+        transparent 100%
+      );
+      opacity: 0.68;
+      transform: rotate(15deg) translate3d(-35%, 0, 0);
+      filter: blur(0.2px);
+      pointer-events: none;
+      z-index: 1;
+      animation: cardSheenDrift 12s ease-in-out infinite;
+      transition: opacity var(--transition), transform 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+
+    .project-card:hover::after,
+    .cap-card:hover::after,
+    .think-card:hover::after,
+    .now-card:hover::after,
+    .contact-grid:hover::after {
+      opacity: 0.9;
+      transform: rotate(15deg) translate3d(115%, 0, 0);
+    }
+
+    @keyframes cardSheenDrift {
+      0% {
+        transform: rotate(15deg) translate3d(-45%, 0, 0);
+      }
+      50% {
+        transform: rotate(15deg) translate3d(115%, 0, 0);
+      }
+      100% {
+        transform: rotate(15deg) translate3d(-45%, 0, 0);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      body::after,
+      .project-card::after,
+      .cap-card::after,
+      .think-card::after,
+      .now-card::after,
+      .contact-grid::after {
+        animation: none;
+      }
+    }
+
+    #progress-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px; /* Slightly thicker for visibility */
+      width: 0%;
+      background: linear-gradient(90deg, var(--accent-emerald), rgba(71, 184, 129, 0.6));
+      z-index: 1005;
+      transition: width 0.15s;
+    }
+
+    /* Typography */
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+      font-weight: 400;
+      font-family: var(--font-serif);
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5); /* Added shadow for depth */
+    }
+
+    .serif {
+      font-family: var(--font-serif);
+    }
+
+    .mono {
+      font-family: var(--font-mono);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* Layout */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 5%;
+      width: 100%;
+    }
+
+    .container-sm {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 5%;
+      width: 100%;
+    }
+
+    .section {
+      padding: 9rem 0;
+      position: relative;
+    }
+
+    .section-header {
+      margin-bottom: 4.5rem;
+      max-width: 700px;
+    }
+
+    .section-label {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent-emerald);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .section-label::before {
+      content: '';
+      display: block;
+      width: 1.5rem;
+      height: 1px;
+      background: var(--accent-emerald);
+    }
+
+    .section-title {
+      font-size: clamp(2.5rem, 5vw, 3.5rem);
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.02em;
+    }
+
+    .section-desc {
+      font-size: 1.125rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      padding: 0.9rem 1.8rem;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      font-family: var(--font-mono);
+      transition: all var(--transition);
+      cursor: pointer;
+      letter-spacing: 0.05em;
+      border: 1px solid transparent;
+      text-transform: uppercase;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .btn-primary {
+      background: var(--text-main);
+      color: var(--bg);
+      font-weight: 500;
+    }
+
+    .btn-primary:hover {
+      background: transparent;
+      color: var(--text-main);
+      border-color: var(--text-main);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--text-main);
+      border-color: var(--border);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--text-main);
+      background: rgba(255, 255, 255, 0.05);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Navigation */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: 1.5rem 0;
+      background: linear-gradient(to bottom, rgba(9, 10, 12, 0.98), rgba(9, 10, 12, 0.9));
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      border-bottom: 1px solid var(--border);
+      transition: all var(--transition);
+    }
+
+    header.scrolled {
+      padding: 1rem 0;
+      background: rgba(9, 10, 12, 0.95);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-family: var(--font-mono);
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      z-index: 1001;
+      position: relative;
+      color: var(--text-main);
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
+    }
+
+    .logo span {
+      color: var(--accent-emerald);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+    }
+
+    .nav-link {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      position: relative;
+      padding-bottom: 0.25rem;
+      transition: color 0.3s;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-family: var(--font-mono);
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--accent-emerald);
+      transition: width 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: var(--text-main);
+    }
+
+    .nav-link:hover::after,
+    .nav-link.active::after {
+      width: 100%;
+    }
+
+    /* Mobile Navigation */
+    .hamburger {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: var(--text-main);
+      cursor: pointer;
+      position: relative;
+      z-index: 1001;
+    }
+
+    .mobile-nav {
+      position: fixed;
+      inset: 0;
+      background: var(--bg);
+      z-index: 999;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 2.5rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity var(--transition);
+    }
+
+    .mobile-nav.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .mobile-nav .nav-link {
+      font-size: 2rem;
+      font-family: var(--font-serif);
+      color: var(--text-muted);
+      text-transform: none;
+      letter-spacing: 0;
+    }
+
+    .mobile-nav .nav-link:hover {
+      color: var(--accent-emerald);
+    }
+
+    .mobile-nav .nav-link::after {
+      display: none;
+    }
+
+    /* Hero Section */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      padding-top: 6rem;
+      overflow: hidden;
+    }
+
+    .hero-glow-1 {
+      position: absolute;
+      width: 700px;
+      height: 700px;
+      background: radial-gradient(circle, rgba(71, 184, 129, 0.08) 0%, transparent 70%);
+      top: -10%;
+      right: -15%;
+      filter: blur(80px);
+      pointer-events: none;
+    }
+
+    .hero-glow-2 {
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(143, 133, 211, 0.06) 0%, transparent 70%);
+      bottom: -20%;
+      left: -10%;
+      filter: blur(80px);
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-content {
+      max-width: 700px;
+    }
+
+    .hero-meta-bar {
+      display: inline-flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--text-main);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      flex-wrap: wrap;
+    }
+
+    .hero-meta-item {
+      padding: 0.4rem 0.9rem;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: var(--bg-card);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    }
+
+    .hero-meta-item i {
+      width: 4px;
+      height: 4px;
+      background: var(--accent-emerald);
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    .hero h1 {
+      font-size: clamp(3.5rem, 7vw, 6rem);
+      line-height: 1.05;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.03em;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8), 0 0 20px rgba(71, 184, 129, 0.2);
+    }
+
+    .hero h1 i {
+      font-style: italic;
+      color: var(--accent-emerald);
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    }
+
+    .hero p {
+      font-size: clamp(1.2rem, 1.8vw, 1.4rem);
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 3.5rem;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+    }
+
+    .hero-portrait-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 380px;
+      margin: 0 auto;
+    }
+
+    .hero-portrait-frame {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: var(--bg-card);
+      aspect-ratio: 3/4;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    }
+
+    .hero-portrait-frame::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      box-shadow: inset 0 0 50px rgba(9, 10, 12, 0.9);
+      pointer-events: none;
+    }
+
+    .hero-portrait {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: grayscale(15%) contrast(1.1);
+      transition: filter var(--transition);
+    }
+
+    .hero-portrait-wrapper:hover .hero-portrait {
+      filter: grayscale(0%) contrast(1.1);
+    }
+
+    .portrait-accent {
+      position: absolute;
+      bottom: -1.5rem;
+      left: -1.5rem;
+      background: var(--bg-elevated);
+      border: 1px solid var(--border);
+      padding: 1.5rem;
+      border-radius: 8px;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      z-index: 3;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(10px);
+    }
+
+    .portrait-accent span {
+      display: block;
+      color: var(--text-main);
+      font-size: 0.85rem;
+      margin-bottom: 0.25rem;
+    }
+
+    @media (max-width: 1024px) {
+      .portrait-accent {
+        left: 1.5rem;
+        bottom: 1.5rem;
+      }
+    }
+
+    /* Credibility Strip */
+    .proof-bar {
+      padding: 2.5rem 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      background: rgba(17, 19, 24, 0.5);
+      backdrop-filter: blur(15px);
+      overflow: hidden;
+    }
+
+    .proof-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .proof-item {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      transition: color 0.3s;
+    }
+
+    .proof-item:hover {
+      color: var(--text-main);
+    }
+
+    .proof-icon {
+      font-size: 1.25rem;
+      color: var(--accent-gold);
+    }
+
+    /* Projects */
+    #projects {
+      background: var(--bg);
+    }
+
+    .projects-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 5rem;
+    }
+
+    .project-card {
+      background: var(--bg-elevated);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      transition: all var(--transition);
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .project-card:hover {
+      border-color: var(--border-hover);
+      transform: translateY(-6px);
+      box-shadow: 0 24px 48px rgba(0, 0, 0, 0.5);
+    }
+
+    .project-card.flagship {
+      border-color: rgba(71, 184, 129, 0.4);
+      background: linear-gradient(145deg, var(--bg-elevated) 0%, rgba(71, 184, 129, 0.05) 100%);
+    }
+
+    .project-card.flagship:hover {
+      border-color: var(--accent-emerald);
+      box-shadow: 0 32px 64px rgba(71, 184, 129, 0.2);
+    }
+
+    .project-content {
+      padding: clamp(2.5rem, 6vw, 4.5rem);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-meta-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .project-tags {
+      display: flex;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+    }
+
+    .tag {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      padding: 0.35rem 0.85rem;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      color: var(--text-main);
+      background: var(--bg-card);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .flagship-badge {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      color: var(--bg);
+      background: var(--accent-emerald);
+      padding: 0.35rem 0.85rem;
+      border-radius: 4px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .project-title {
+      font-size: clamp(2.2rem, 4vw, 3rem);
+      margin-bottom: 0.75rem;
+      line-height: 1.1;
+    }
+
+    .project-summary {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      font-style: italic;
+      margin-bottom: 3.5rem;
+      font-family: var(--font-serif);
+    }
+
+    .project-details {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 3.5rem;
+      margin-bottom: 3.5rem;
+      border-left: 1px solid var(--border);
+      padding-left: 2rem;
+    }
+
+    .pd-col h4 {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      color: rgba(255, 255, 255, 0.6);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .pd-col h4::before {
+      content: '';
+      display: block;
+      width: 6px;
+      height: 1px;
+      background: rgba(255, 255, 255, 0.4);
+    }
+
+    .pd-col p {
+      font-size: 1rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    .pd-result-wrapper {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 1.5rem;
+      background: var(--bg-card);
+      padding: 2rem;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+    }
+
+    .metric-chip {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-right: 2rem;
+      border-right: 1px solid var(--border);
+    }
+
+    .metric-val {
+      font-family: var(--font-serif);
+      font-size: 2.5rem;
+      color: var(--accent-emerald);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    .metric-lbl {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .pd-result-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .pd-result-text h4 {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--text-main);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.5rem;
+    }
+
+    .pd-result-text p {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .project-proof-links {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin-top: auto;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .proof-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--text-main);
+      padding: 0.6rem 1rem;
+      border-radius: 4px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border);
+      transition: all var(--transition);
+      letter-spacing: 0.05em;
+      text-decoration: none;
+    }
+
+    .proof-link:hover {
+      background: var(--text-main);
+      color: var(--bg);
+      border-color: var(--text-main);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    }
+
+    .proof-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      padding: 0.6rem 1rem;
+      border-radius: 4px;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      letter-spacing: 0.05em;
+      cursor: default;
+    }
+
+    .project-card.secondary-build .project-content {
+      padding: clamp(2rem, 4vw, 3rem);
+    }
+
+    .project-card.secondary-build .project-title {
+      font-size: clamp(1.8rem, 3vw, 2.4rem);
+    }
+
+    .project-card.secondary-build .pd-result-wrapper {
+      padding: 1.5rem;
+      background: transparent;
+      border: 1px dashed var(--border);
+    }
+
+    /* How I Think */
+    #thinking {
+      background: var(--bg-elevated);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .think-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .think-card {
+      padding: 3rem 2.5rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      transition: var(--transition);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .think-card:hover {
+      border-color: rgba(255, 255, 255, 0.25);
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    .think-num {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--accent-purple);
+      margin-bottom: 1.5rem;
+      display: block;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 1rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .think-card h3 {
+      font-size: 1.75rem;
+      margin-bottom: 1rem;
+      line-height: 1.25;
+    }
+
+    .think-card p {
+      font-size: 1rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    /* Capabilities */
+    .cap-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 3rem;
+    }
+
+    .cap-card {
+      padding: 2.5rem;
+      border: 1px solid var(--border);
+      background: var(--bg-elevated);
+      border-radius: 12px;
+      transition: var(--transition);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .cap-card:hover {
+      border-color: var(--accent-gold);
+      box-shadow: 0 16px 32px rgba(0, 0, 0, 0.3);
+      transform: translateY(-4px);
+    }
+
+    .cap-card h3 {
+      font-size: 1.35rem;
+      font-family: var(--font-sans);
+      font-weight: 500;
+      margin-bottom: 1rem;
+      color: var(--text-main);
+    }
+
+    .cap-statement {
+      font-size: 0.95rem;
+      color: var(--text-main);
+      margin-bottom: 1rem;
+      line-height: 1.6;
+    }
+
+    .cap-why {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+      padding-left: 1rem;
+      border-left: 2px solid var(--accent-emerald);
+    }
+
+    .cap-why strong {
+      color: var(--text-main);
+      font-weight: 500;
+    }
+
+    .cap-micro {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--accent-gold);
+      margin-bottom: 1.5rem;
+      display: block;
+      padding-top: 1rem;
+      border-top: 1px dashed var(--border);
+    }
+
+    .cap-tech {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .cap-pill {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      padding: 0.35rem 0.75rem;
+      border-radius: 4px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+    }
+
+    /* Research & Now (Two column lists) */
+    .two-col-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+    }
+
+    .list-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .list-item {
+      padding: 2.5rem 0;
+      border-bottom: 1px solid var(--border);
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .list-item:first-child {
+      border-top: 1px solid var(--border);
+    }
+
+    .list-item:hover {
+      border-bottom-color: var(--accent-gold);
+      padding-left: 1rem;
+    }
+
+    .list-item .meta {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--accent-gold);
+      margin-bottom: 0.75rem;
+      display: block;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .list-item h3 {
+      font-size: 1.4rem;
+      font-family: var(--font-sans);
+      font-weight: 500;
+      margin-bottom: 0.75rem;
+    }
+
+    .list-item p {
+      font-size: 1rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* Now Section */
+    #now {
+      background: var(--bg-elevated);
+      border-top: 1px solid var(--border);
+    }
+
+    .now-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .now-card {
+      padding: 2.5rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      position: relative;
+      overflow: hidden;
+      transition: var(--transition);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .now-card:hover {
+      border-color: rgba(71, 184, 129, 0.5);
+      transform: translateY(-6px);
+      box-shadow: 0 16px 32px rgba(0, 0, 0, 0.4);
+    }
+
+    .now-status {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--accent-emerald);
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+      letter-spacing: 0.05em;
+      background: rgba(71, 184, 129, 0.1);
+      padding: 0.35rem 0.75rem;
+      border-radius: 4px;
+      display: inline-flex;
+    }
+
+    .ping {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent-emerald);
+      position: relative;
+    }
+
+    .ping::after {
+      content: '';
+      position: absolute;
+      inset: -4px;
+      border: 1px solid var(--accent-emerald);
+      border-radius: 50%;
+      animation: ping 2s infinite cubic-bezier(0, 0, 0.2, 1);
+    }
+
+    @keyframes ping {
+
+      75%,
+      100% {
+        transform: scale(2);
+        opacity: 0;
+      }
+    }
+
+    .now-card h3 {
+      font-size: 1.25rem;
+      font-family: var(--font-sans);
+      font-weight: 500;
+      margin-bottom: 0.75rem;
+    }
+
+    .now-card p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    /* Beyond */
+    .beyond-wrap {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    .beyond-main p {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      margin-bottom: 1.75rem;
+      line-height: 1.8;
+    }
+
+    .beyond-main p strong {
+      color: var(--text-main);
+      font-weight: 500;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.1rem;
+    }
+
+    .beyond-aside {
+      padding: 2.5rem;
+      background: var(--bg-elevated);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .beyond-aside h4 {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      color: var(--accent-purple);
+      margin-bottom: 1.5rem;
+      letter-spacing: 0.08em;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 1rem;
+    }
+
+    .beyond-list {
+      list-style: none;
+    }
+
+    .beyond-list li {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+      display: flex;
+      gap: 0.75rem;
+      align-items: flex-start;
+    }
+
+    .beyond-list li::before {
+      content: '→';
+      color: var(--accent-purple);
+      font-family: var(--font-mono);
+    }
+
+    /* Contact / Presence Layer */
+    #contact {
+      padding: 8rem 0 8rem;
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(71, 184, 129, 0.08), transparent 35%),
+        radial-gradient(circle at 80% 70%, rgba(143, 133, 211, 0.06), transparent 40%),
+        var(--bg-card);
+    }
+
+    #contact::before {
+      content: "";
+      position: absolute;
+      inset: -30%;
+      background: radial-gradient(circle, rgba(71, 184, 129, 0.08), transparent 35%);
+      filter: blur(90px);
+      animation: presenceDrift 28s ease-in-out infinite alternate;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    #contact::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Cpath d='M0 40L40 0H20L0 20M40 40V20L20 40'/%3E%3C/g%3E%3C/svg%3E");
+      animation: gridShift 40s linear infinite;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    @keyframes presenceDrift {
+      0% { transform: translate(-8%, -4%) scale(1); opacity: 0.45; }
+      50% { transform: translate(8%, 6%) scale(1.12); opacity: 0.65; }
+      100% { transform: translate(-4%, 8%) scale(1.05); opacity: 0.5; }
+    }
+
+    @keyframes gridShift {
+      0% { transform: translate(0, 0); }
+      100% { transform: translate(40px, 40px); }
+    }
+
+    .contact-glow {
+      position: absolute;
+      width: 800px;
+      height: 800px;
+      background: radial-gradient(circle, rgba(71, 184, 129, 0.05) 0%, transparent 70%);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      filter: blur(100px);
+      pointer-events: none;
+      animation: contactPulse 18s ease-in-out infinite alternate;
+      z-index: 0;
+    }
+
+    @keyframes contactPulse {
+      0% { transform: translate(-52%, -48%) scale(0.95); opacity: 0.45; }
+      100% { transform: translate(-48%, -52%) scale(1.12); opacity: 0.7; }
+    }
+
+    .contact-grid {
+      position: relative;
+      z-index: 2;
+      border: 1px solid var(--border);
+      background: rgba(17, 19, 24, 0.88);
+      backdrop-filter: blur(18px);
+      border-radius: 16px;
+      padding: 5rem;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    }
+
+    .contact-info .section-label {
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-title {
+      font-size: clamp(3rem, 5vw, 4rem);
+      margin-bottom: 1.5rem;
+      line-height: 1.1;
+    }
+
+    .contact-p {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      margin-bottom: 2.5rem;
+      line-height: 1.7;
+      max-width: 450px;
+    }
+
+    .contact-cta-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+
+    .contact-best {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--accent-emerald);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .link-vault {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .vault-link {
+      padding: 1.25rem 1.5rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--bg-card);
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      transition: all var(--transition);
+      text-decoration: none;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .vault-link:hover {
+      border-color: rgba(71, 184, 129, 0.5);
+      background: rgba(71, 184, 129, 0.02);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px rgba(71, 184, 129, 0.12);
+    }
+
+    .vl-icon {
+      font-size: 1.25rem;
+      color: var(--text-main);
+      margin-bottom: 0.25rem;
+    }
+
+    .vl-title {
+      font-family: var(--font-sans);
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--text-main);
+    }
+
+    .vl-sub {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* Footer */
+    footer {
+      padding: 3rem 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid var(--border);
+      background: var(--bg);
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    /* Animations */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .delay-1 {
+      transition-delay: 0.1s;
+    }
+
+    .delay-2 {
+      transition-delay: 0.2s;
+    }
+
+    .delay-3 {
+      transition-delay: 0.3s;
+    }
+
+    .delay-4 {
+      transition-delay: 0.4s;
+    }
+
+    @media (max-width: 1024px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+        text-align: center;
+      }
+
+      .hero-content {
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .hero-meta-bar {
+        justify-content: center;
+      }
+
+      .hero p {
+        text-align: center;
+      }
+
+      .hero-actions {
+        justify-content: center;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+        padding: 3rem;
+        gap: 4rem;
+      }
+
+      .contact-info {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .contact-p {
+        text-align: center;
+      }
+
+      .contact-cta-wrapper {
+        align-items: center;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .project-details {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        border-left: none;
+        padding-left: 0;
+      }
+
+      .pd-col h4::before {
+        display: none;
+      }
+
+      .beyond-wrap {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+      }
+
+      .two-col-grid {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+      }
+
+      .section {
+        padding: 6rem 0;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hamburger {
+        display: block;
+      }
+
+      .hero {
+        padding-top: 8rem;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .proof-grid {
+        gap: 1.5rem;
+        justify-content: center;
+      }
+
+      .project-content {
+        padding: 2rem;
+      }
+
+      .pd-result-wrapper {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+
+      .metric-chip {
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+        padding-right: 0;
+        padding-bottom: 1rem;
+      }
+
+      .link-vault {
+        grid-template-columns: 1fr;
+      }
+
+      footer {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="progress-bar"></div>
+
+  <!-- Header -->
+  <header id="header">
+    <div class="container nav-inner">
+      <a href="#" class="logo">Rana Irem Turhan<span>.</span></a>
+      <nav class="nav-links">
+        <a href="#projects" class="nav-link">Systems</a>
+        <a href="#thinking" class="nav-link">Philosophy</a>
+        <a href="#capabilities" class="nav-link">Stack</a>
+        <a href="#contact" class="nav-link">Presence</a>
+      </nav>
+      <button class="hamburger" aria-label="Menu" onclick="toggleMenu()">☰</button>
+    </div>
+  </header>
+
+  <!-- Mobile Nav -->
+  <div class="mobile-nav" id="mobile-nav">
+    <a href="#projects" class="nav-link" onclick="toggleMenu()">Systems</a>
+    <a href="#thinking" class="nav-link" onclick="toggleMenu()">Philosophy</a>
+    <a href="#capabilities" class="nav-link" onclick="toggleMenu()">Stack</a>
+    <a href="#research" class="nav-link" onclick="toggleMenu()">Research</a>
+    <a href="#now" class="nav-link" onclick="toggleMenu()">Now</a>
+    <a href="#contact" class="nav-link" onclick="toggleMenu()">Presence</a>
+  </div>
+
+  <!-- Hero -->
+  <section class="hero" id="hero">
+    <div class="hero-glow-1"></div>
+    <div class="hero-glow-2"></div>
+    <div class="container container-sm">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <div class="hero-meta-bar reveal">
+            <div class="hero-meta-item"><i></i> Data Systems</div>
+            <div class="hero-meta-item"><i></i> Applied AI</div>
+            <div class="hero-meta-item"><i></i> Istanbul, TR</div>
+          </div>
+          <h1 class="reveal delay-1">I build reliable pipelines.<br>Then I make them <i>intelligent.</i></h1>
+          <p class="reveal delay-2">From staging layer to final output, I design systems that hold under real
+            conditions. Then I add intelligence where it actually earns its place — not the other way around.</p>
+          <div class="hero-actions reveal delay-3">
+            <a href="#projects" class="btn btn-primary">See the Work</a>
+            <a href="#contact" class="btn btn-outline">Get in Touch</a>
+          </div>
+        </div>
+        <div class="hero-portrait-wrapper reveal delay-4">
+          <div class="hero-portrait-frame">
+            <img src="assets/portrait.jpeg" alt="Rana Irem Turhan" class="hero-portrait">
+          </div>
+          <div class="portrait-accent">
+            <span>Systems Engineer</span>
+            Data Scientist | Engineer | AI Practitioner 
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Credibility Strip -->
+  <div class="proof-bar reveal delay-4">
+    <div class="container">
+      <div class="proof-grid">
+        <div class="proof-item">
+          <span class="proof-icon">🏢</span>
+          <span class="proof-text">EPAM Systems</span>
+        </div>
+        <div class="proof-item">
+          <span class="proof-icon">🏆</span>
+          <span class="proof-text">Top 5 — AI Datathon</span>
+        </div>
+        <div class="proof-item">
+          <span class="proof-icon">🎖️</span>
+          <span class="proof-text">SAP End-to-End Systems</span>
+        </div>
+        <div class="proof-item">
+          <span class="proof-icon">🎖️</span>
+          <span class="proof-text">SAP BTP GenAI Certified</span>
+        </div>
+        <div class="proof-item">
+          <span class="proof-icon">☁️</span>
+          <span class="proof-text">Cloud Data Engineering</span>
+        </div>
+        <div class="proof-item">
+          <span class="proof-icon">🎙️</span>
+          <span class="proof-text">DS & ML Hub — Community Lead & AI Content Creator</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Projects -->
+  <section class="section" id="projects">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Selected Systems</span>
+        <h2 class="section-title">Not assignments. Systems.</h2>
+        <p class="section-desc">Each of these represents a full design loop — a real problem, a deliberate approach, a
+          trade-off made consciously, and a result that is measured and defended.</p>
+      </div>
+
+      <div class="projects-grid">
+
+        <!-- Flagship Project -->
+        <div class="project-card flagship reveal">
+          <div class="project-content">
+            <div class="project-meta-top">
+              <div class="project-tags">
+                <span class="tag">Time-Series ML</span>
+                <span class="tag">Industrial Data Pipelines</span>
+              </div>
+              <span class="flagship-badge">🏆 Flagship Initiative</span>
+            </div>
+            <h3 class="project-title">Paint Factory Process Prediction</h3>
+            <p class="project-summary">Predictive modeling of sensor behavior in a live industrial production
+              environment — Eliar Elektronik × Hacettepe AI Club</p>
+
+            <div class="project-details">
+              <div class="pd-col">
+                <h4>The Problem</h4>
+                <p>Predicting critical tank fill levels in a continuous paint production line — none of it clean, none
+                  of it static. Required handling real-time sensor signals, irregular valve states, and automated dosing
+                  commands generated by industrial machinery.
+                </p>
+              </div>
+              <div class="pd-col">
+                <h4>What I Did Differently</h4>
+                <p>Refused naive cross-validation. Designed sequential validation to preserve temporal logic and prevent
+                  leakage. Built process-aware features around sequence dependencies — industrial signals carry memory.
+                  Iterated with LightGBM, focusing on stability under real production conditions, not just leaderboard
+                  gains.
+                </p>
+              </div>
+
+              <div class="pd-result-wrapper">
+                <div class="metric-chip">
+                  <span class="metric-val">21.82</span>
+                  <span class="metric-lbl">Final MAE Score</span>
+                </div>
+                <div class="pd-result-text">
+                  <h4>Outcome</h4>
+                  <p>Reliably outperformed baseline systems. Selected into the top 8 teams nationally. Invited to
+                    formally present and defend the architecture in Ankara before an academic and industrial professor
+                    jury.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-proof-links">
+              <span class="proof-tag"><span>📄</span> Read Case Study</span>
+              <span class="proof-tag"><span>📊</span> View Presentation Slides</span>
+              <a href="https://github.com/Rana-Irem-Turhan" target="_blank" class="proof-link"><span>💻</span> GitHub
+                Repository</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2 (Missing FinRisk-AI) -->
+        <div class="project-card reveal">
+          <div class="project-content">
+            <div class="project-meta-top">
+              <div class="project-tags">
+                <span class="tag">Machine Learning</span>
+                <span class="tag">Credit Risk Scoring</span>
+              </div>
+            </div>
+            <h3 class="project-title">FinRisk-AI: Credit Risk Scoring</h3>
+            <p class="project-summary">Developing an intelligent risk assessment architecture to optimize lending
+              decisions.</p>
+
+            <div class="project-details">
+              <div class="pd-col">
+                <h4>The Problem</h4>
+                <p>Traditional credit scoring mechanisms often plateau at roughly 60% accuracy, relying heavily on
+                  simple linear thresholds. These baseline models fail to capture non-linear financial behaviors,
+                  resulting in excessive defaults and lost opportunities.</p>
+              </div>
+              <div class="pd-col">
+                <h4>What I Did Differently</h4>
+                <p>Engineered an ensemble machine learning pipeline incorporating XGBoost and Random Forest,
+                  orchestrated through rigorous cross-validation. Deployed the resulting serialized model as an
+                  interactive application via Hugging Face Spaces for immediate stakeholder access.</p>
+              </div>
+              <div class="pd-result-wrapper">
+                <div class="metric-chip">
+                  <span class="metric-val">75%</span>
+                  <span class="metric-lbl">Model Accuracy</span>
+                </div>
+                <div class="pd-result-text">
+                  <h4>Outcome</h4>
+                  <p>Elevated the baseline measurement from a stagnant 60% to a robust 75%, effectively proving the
+                    commercial value of ensemble trees in high-stakes financial risk modeling.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-proof-links">
+              <a href="https://huggingface.co/iremrit" target="_blank" class="proof-link"><span>🤗</span> Hugging Face
+                Deployment</a>
+              <a href="https://github.com/Rana-Irem-Turhan" target="_blank" class="proof-link"><span>💻</span> GitHub
+                Repository</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project-card reveal">
+          <div class="project-content">
+            <div class="project-meta-top">
+              <div class="project-tags">
+                <span class="tag">RAG Infrastructure</span>
+                <span class="tag">Generative AI</span>
+              </div>
+            </div>
+            <h3 class="project-title">RAG-Based SQL Interpretation System</h3>
+            <p class="project-summary">A retrieval-augmented pipeline executing precise database queries over complex
+              schemas — Global AI Hub × Akbank</p>
+
+            <div class="project-details">
+              <div class="pd-col">
+                <h4>The Problem</h4>
+                <p>LLMs consistently hallucinate SQL structures when untethered. Without rigorous grounding in a defined
+                  schema context, generated analytics queries fail silently, projecting high confidence on corrupted
+                  data.</p>
+              </div>
+              <div class="pd-col">
+                <h4>What I Did Differently</h4>
+                <p>Built a FAISS vector retrieval layer mapping to specific normalized entity embeddings. Developed
+                  structured, strict prompt templating boundaries to inject context safely, and cut latency via prefix
+                  query filtering.</p>
+              </div>
+              <div class="pd-result-wrapper">
+                <div class="metric-chip">
+                  <span class="metric-val">~90%</span>
+                  <span class="metric-lbl">Query Accuracy</span>
+                </div>
+                <div class="pd-result-text">
+                  <h4>Outcome</h4>
+                  <p>Engineered and deployed a fully functional MVP within one week, dropping systemic hallucination
+                    rates drastically while reducing retrieval latency by 35%.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-proof-links">
+              <span class="proof-tag"><span>📐</span> System Architecture</span>
+              <span class="proof-tag"><span>⚙️</span> Interactive Demo</span>
+              <a href="https://github.com/Rana-Irem-Turhan" target="_blank" class="proof-link"><span>💻</span> GitHub
+                Repository</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="project-card reveal">
+          <div class="project-content">
+            <div class="project-meta-top">
+              <div class="project-tags">
+                <span class="tag">Data Warehouse Architecture</span>
+                <span class="tag">ETL Reliability</span>
+              </div>
+            </div>
+            <h3 class="project-title">Multi-Layer Warehouse Reconstruction</h3>
+            <p class="project-summary">End-to-end analytical architecture mapping raw staging areas through 3NF up to a
+              modeled data mart — EPAM Systems</p>
+
+            <div class="project-details">
+              <div class="pd-col">
+                <h4>The Problem</h4>
+                <p>Analytical stakeholders were executing demanding queries directly against fragile operational
+                  databases. The ecosystem lacked separation of concerns, mutation tracking, or recovery strategies for
+                  failed pipelines.</p>
+              </div>
+              <div class="pd-col">
+                <h4>What I Did Differently</h4>
+                <p>Migrated infrastructure to a strict Staging → 3NF → Data Mart paradigm. Enforced Slowly Changing
+                  Dimensions (SCD Type 1/2) and built heavily idempotent ETL jobs backed by robust transaction controls.
+                </p>
+              </div>
+              <div class="pd-result-wrapper">
+                <div class="metric-chip">
+                  <span class="metric-val">25%</span>
+                  <span class="metric-lbl">Less Redundancy</span>
+                </div>
+                <div class="pd-result-text">
+                  <h4>Outcome</h4>
+                  <p>Successfully decoupled BI layers from operational schema fluctuations. Eliminated silent reporting
+                    failures by establishing fully auditable, rerunnable ingestion pipelines.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-proof-links">
+              <span class="proof-tag"><span>🗺️</span> View Pipeline Flow</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 5 (Climate Dashboard) -->
+        <div class="project-card secondary-build reveal">
+          <div class="project-content">
+            <div class="project-meta-top">
+              <div class="project-tags">
+                <span class="tag">Analytical Dashboards</span>
+                <span class="tag">Statistical Modeling</span>
+              </div>
+            </div>
+            <h3 class="project-title">Climate Dashboard & Insight Explorer</h3>
+            <p class="project-summary">Long-range climate visualization and correlation analytics engine.</p>
+
+            <div class="project-details">
+              <div class="pd-col">
+                <h4>The Problem</h4>
+                <p>The bottleneck wasn't the data — it was access. Translating decades of raw atmospheric and
+                  temperature datasets into immediate, actionable insights for non-technical researchers without losing
+                  statistical rigor.
+                </p>
+              </div>
+              <div class="pd-col">
+                <h4>What I Did Differently</h4>
+                <p>Built highly reusable Python data pipelines leveraging Pandas for ingestion and Scikit-learn for
+                  correlation modeling. Architected a live frontend employing Dash and Plotly for deep interactive
+                  visualization.</p>
+              </div>
+              <div class="pd-result-wrapper">
+                <div class="metric-chip">
+                  <span class="metric-val">Live</span>
+                  <span class="metric-lbl">Analytics Platform</span>
+                </div>
+                <div class="pd-result-text">
+                  <h4>Outcome</h4>
+                  <p>Delivered a thesis-style analytics application capable of rendering long-range correlations
+                    dynamically via parameter injection from the UI.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-proof-links">
+              <a href="https://github.com/Rana-Irem-Turhan" target="_blank" class="proof-link"><span>💻</span> View
+                Source Code</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- How I Think -->
+  <section class="section" id="thinking">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Engineering Philosophy</span>
+        <h2 class="section-title">How I evaluate systems.</h2>
+        <p class="section-desc">Data engineering should be invisible when functioning properly. The structural decisions
+          made in the foundational ingestion layer irrevocably dictate the integrity of every subsequent analytic.</p>
+      </div>
+
+      <div class="think-grid">
+        <div class="think-card reveal">
+          <span class="think-num">01. Pipeline as a Contract</span>
+          <h3>Make the promises explicit.</h3>
+          <p>Every ETL workflow makes implicit promises downstream. I make those promises explicit by integrating
+            idempotency, transaction commits, and structured error boundaries at deployment, not post-failure.</p>
+        </div>
+        <div class="think-card reveal delay-1">
+          <span class="think-num">02. Architectural Trust</span>
+          <h3>Speed without separation is debt</h3>
+          <p>Raw ingestion, normalized 3NF, and dimensional models aren't bureaucratic filler—they represent strict
+            ownership boundaries. Collapsing layers merely to accelerate immediate delivery is borrowing heavily against
+            future stability.</p>
+        </div>
+        <div class="think-card reveal delay-2">
+          <span class="think-num">03. Grounded Intelligence</span>
+          <h3>AI needs a boring foundation.</h3>
+          <p>Any intelligent model is fundamentally capped by the reliability of its input features. I architect AI
+            capabilities exclusively atop sanitized, well-modeled schemas. Reliable engineering renders intelligence
+            trustworthy.</p>
+        </div>
+        <div class="think-card reveal delay-3">
+          <span class="think-num">04. Technical Translation</span>
+          <h3>If it can’t be explained, it won’t be used</h3>
+          <p>Sophisticated analytical work holds zero leverage if misunderstood by decision-makers. I prioritize
+            translating pipeline latency, predictive confidence, and data quality into universally resonated business
+            narratives.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Capabilities -->
+  <section class="section" id="capabilities">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Technical Stack</span>
+        <h2 class="section-title">Systems over tools.</h2>
+        <p class="section-desc">Languages and frameworks rotate over time. The structural methodologies remain constant.
+          Below are my core areas of execution.</p>
+      </div>
+
+      <div class="cap-grid">
+        <div class="cap-card reveal">
+          <h3>Enterprise Systems & SAP</h3>
+          <div class="cap-statement">Navigating and deploying within massive enterprise resource ecosystems.</div>
+          <div class="cap-why"><strong>Why it matters:</strong> Enterprise stacks require strict governance and deep
+            integration knowledge to prevent silos.</div>
+          <span class="cap-micro">SAP Young Professionals Program & Certifications.</span>
+          <div class="cap-tech">
+            <span class="cap-pill">SAP S/4HANA</span><span class="cap-pill">SAP BTP</span><span class="cap-pill">SAP
+              Analytics Cloud</span>
+          </div>
+        </div>
+
+        <div class="cap-card reveal delay-1">
+          <h3>Data Architecture Strategies</h3>
+          <div class="cap-statement">Designing heavily layered environments establishing clear partitions between
+            ingestion, curation, and analytics.</div>
+          <div class="cap-why"><strong>Why it matters:</strong> Collapsing layers to accelerate immediate delivery
+            borrows heavily against future stability.</div>
+          <span class="cap-micro">Applied extensively across EPAM integration workflows.</span>
+          <div class="cap-tech">
+            <span class="cap-pill">PostgreSQL</span><span class="cap-pill">Amazon Redshift</span><span
+              class="cap-pill">AWS S3</span><span class="cap-pill">SCD Architecture</span>
+          </div>
+        </div>
+
+        <div class="cap-card reveal delay-2">
+          <h3>Robust ETL & Validation</h3>
+          <div class="cap-statement">Writing immutable, idempotent pipelines designed to fail predictably and restart
+            seamlessly.</div>
+          <div class="cap-why"><strong>Why it matters:</strong> Silently failing analytics pipelines create
+            organizational mistrust in the fundamental data layers.</div>
+          <span class="cap-micro">Core methodology for stabilizing fragmented upstream data.</span>
+          <div class="cap-tech">
+            <span class="cap-pill">Python</span><span class="cap-pill">SQL</span><span class="cap-pill">Amazon
+              RDS</span><span class="cap-pill">DynamoDB</span>
+          </div>
+        </div>
+
+        <div class="cap-card reveal delay-3">
+          <h3>Applied ML & Vector Systems</h3>
+          <div class="cap-statement">Constructing time-series feature environments and RAG layers specifically for
+            production.</div>
+          <div class="cap-why"><strong>Why it matters:</strong> Any intelligent model is fundamentally capped by the
+            reliability of its input streams.</div>
+          <span class="cap-micro">Validated via Top 5 National Datathon placement.</span>
+          <div class="cap-tech">
+            <span class="cap-pill">LightGBM</span><span class="cap-pill">FAISS</span><span class="cap-pill">Hugging
+              Face</span><span class="cap-pill">Ensembles</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Research & Now -->
+  <section class="section" id="research">
+    <div class="container container-sm">
+      <div class="section-header reveal">
+        <span class="section-label">Research & Activity</span>
+        <h2 class="section-title">The boundaries of my work.</h2>
+        <p class="section-desc">Where research meets production constraints.</p>
+      </div>
+
+      <div class="two-col-grid">
+        <div class="list-wrap">
+          <div class="list-item reveal">
+            <span class="meta">ICADA 2026 — Formal Acceptance</span>
+            <h3>Applied AI & Data-Driven Systems</h3>
+            <p>Authored research assessing real-world applicability limitations in data systems. Formally scheduled to
+              present findings directly to an international academic audience.</p>
+          </div>
+          <div class="list-item reveal">
+            <span class="meta">TEKNOFEST 2026 — Active</span>
+            <h3>Oncology 3T Pipeline Initiative</h3>
+            <p>Directing a multifaceted team compiling diagnostic AI pipelines for oncological progression. Emphasizing
+              explainability inside critical medical schemas.</p>
+          </div>
+        </div>
+        <div class="list-wrap">
+          <div class="list-item reveal delay-1">
+            <span class="meta">Data Science & ML Hub</span>
+            <h3>Community Leadership & Education</h3>
+            <p>Recognized as an AI Content Creator and awarded "Rising Voice of the Month". Passionate about translating
+              technically dense concepts—like ETL mechanics and deployment nuances—for learners and non-experts.</p>
+          </div>
+          <div class="list-item reveal delay-1">
+            <span class="meta">Enterprise Certifications</span>
+            <h3>SAP & Cloud Ecosystems</h3>
+            <p>Graduate of the SAP Young Professionals Program. Holding verified credentials including SAP Certified
+              Associate – Implementation Consultant and SAP Certified – SAP Generative AI Developer. Profound exposure
+              to end-to-end business models via SAP S/4HANA.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Beyond -->
+  <section class="section" id="beyond">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Identity & Intersections</span>
+        <h2 class="section-title">Systematic translation.</h2>
+      </div>
+
+      <div class="beyond-wrap">
+        <div class="beyond-main reveal">
+          <p>My foundational reflex is identical regardless of the domain: <strong>I must interpret the macro-system
+              before mutating the micro-parts.</strong> This instinct guides my data architecture, but it also dictates
+            my work outside the terminal.</p>
+          <p>I operate extensively in <strong>narrative storytelling and voice delivery</strong>. While it appears to be
+            separate from engineering,
+            it relies on the same core principle: absorbing complexity and delivering it so the intent is understood
+            without friction.</p>
+          <p>Explaining systems is not an accessory — it is a constraint. If something cannot be made clear without
+            distortion, the design itself is incomplete.</p>
+          <p>I am drawn to work at the intersection of architecture and execution — where understanding the full system
+            matters as much as delivering a clean result.</p>
+          <p>Whether I’m designing a data pipeline or shaping a narrative, the objective is the same: <strong>preserve
+              intent, reduce noise, and make the outcome usable.</strong></p>
+        </div>
+        <div class="beyond-aside reveal delay-1">
+          <h4>Intersecting Domains</h4>
+          <ul class="beyond-list">
+            <li>Narrative Voice Acting</li>
+            <li>Technical Concept Simplification</li>
+            <li>Cross-Disciplinary Team Parsing</li>
+            <li>Public Academic Defense</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Presence / Contact Vault -->
+  <section id="contact">
+    <div class="contact-glow"></div>
+    <div class="container">
+      <div class="contact-grid reveal">
+        <div class="contact-info">
+          <span class="section-label">Professional Presence</span>
+          <h2 class="contact-title">Let’s work on something real.</h2>
+          <p class="contact-p">Currently accessible for opportunities traversing data engineering, analytics
+            architecture, and applied intelligence layers. Remote or Istanbul based.</p>
+
+          <div class="contact-cta-wrapper">
+            <span class="contact-best">Direct Line:</span>
+            <a href="mailto:iremturhan20001@gmail.com" class="btn btn-primary">iremturhan20001@gmail.com</a>
+          </div>
+        </div>
+
+        <div class="link-vault">
+          <a href="https://linkedin.com/in/rana-irem-turhan" target="_blank" class="vault-link">
+            <span class="vl-icon">🔗</span>
+            <span class="vl-title">LinkedIn</span>
+            <span class="vl-sub">Professional Network</span>
+          </a>
+          <a href="https://github.com/Rana-Irem-Turhan" target="_blank" class="vault-link">
+            <span class="vl-icon">💻</span>
+            <span class="vl-title">GitHub</span>
+            <span class="vl-sub">Code & Architecture</span>
+          </a>
+          <a href="https://huggingface.co/iremrit" target="_blank" class="vault-link">
+            <span class="vl-icon">🤗</span>
+            <span class="vl-title">Hugging Face</span>
+            <span class="vl-sub">Model Contributions</span>
+          </a>
+          <a href="https://scholar.google.com/citations?user=sIXY1doAAAAJ&hl=en" target="_blank" class="vault-link">
+            <span class="vl-icon">🎓</span>
+            <span class="vl-title">Google Scholar</span>
+            <span class="vl-sub">Academic Publications</span>
+          </a>
+          <a href="https://orcid.org/my-orcid?orcid=0009-0003-4748-9296" target="_blank" class="vault-link">
+            <span class="vl-icon">🔬</span>
+            <span class="vl-title">ORCID</span>
+            <span class="vl-sub">Academic Identity</span>
+          </a>
+          <a href="https://www.kaggle.com/iremturhan" target="_blank" class="vault-link">
+            <span class="vl-icon">🏆</span>
+            <span class="vl-title">Kaggle</span>
+            <span class="vl-sub">Data Competitions</span>
+          </a>
+          <a href="assets/cv.pdf" target="_blank" class="vault-link">
+            <span class="vl-icon">📄</span>
+            <span class="vl-title">Resume / CV</span>
+            <span class="vl-sub">View PDF</span>
+          </a>
+          <a href="https://linktr.ee/Ritirem" target="_blank" class="vault-link">
+            <span class="vl-icon">🌐</span>
+            <span class="vl-title">Linktree</span>
+            <span class="vl-sub">Secondary Links</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <span>© 2026 Rana Irem Turhan. All Rights Reserved.</span>
+    <span>Built for clarity. Engineered for trust.</span>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Progress Bar and Scrolled Header
+    const header = document.getElementById('header');
+    const progressBar = document.getElementById('progress-bar');
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) header.classList.add('scrolled');
+      else header.classList.remove('scrolled');
+
+      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      progressBar.style.width = (winScroll / height) * 100 + "%";
+    });
+
+    // Mobile Navigation Toggle
+    const mobileNav = document.getElementById('mobile-nav');
+    function toggleMenu() {
+      mobileNav.classList.toggle('open');
+      document.body.style.overflow = mobileNav.classList.contains('open') ? 'hidden' : '';
+    }
+
+    // Modern Interscetion Observer for Reveals
+    const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Active Section Tracking
+    const sections = document.querySelectorAll('section[id], #contact');
+    const navLinks = document.querySelectorAll('.nav-links .nav-link');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        if (scrollY >= sectionTop - 250) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(li => {
+        li.classList.remove('active');
+        if (li.getAttribute('href') === '#' + current) {
+          li.classList.add('active');
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>
